@@ -14,6 +14,9 @@ return [
     */
 
     'backend' => [
+    	'orders' => [
+    		'title' => 'Order Management',
+    	],
         'access' => [
             'title' => 'Access Management',
 

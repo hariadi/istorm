@@ -54,10 +54,11 @@ class UserRepository extends Repository
          * be able to differentiate what buttons to show for each row.
          */
 		$dataTableQuery = $this->query()
-			->with('roles')
+			->with('roles', 'agency')
 			->select([
 				config('access.users_table') . '.id',
 				config('access.users_table') . '.name',
+				config('access.users_table') . '.agency_id',
 				config('access.users_table') . '.email',
 				config('access.users_table') . '.status',
 				config('access.users_table') . '.confirmed',

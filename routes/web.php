@@ -36,5 +36,6 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'as' => 'admin.', '
 	require (__DIR__ . '/Backend/Dashboard.php');
 	require (__DIR__ . '/Backend/Search.php');
 	require (__DIR__ . '/Backend/Access.php');
+	require (__DIR__ . '/Backend/Order.php');
 	require (__DIR__ . '/Backend/LogViewer.php');
 });

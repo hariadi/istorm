@@ -140,6 +140,7 @@ return [
                     'associated_roles' => 'Associated Roles',
                     'confirmed' => 'Confirmed',
                     'email' => 'E-mail Address',
+                    'agency_id' => 'Agency',
                     'name' => 'Name',
                     'other_permissions' => 'Other Permissions',
                     'password' => 'Password',

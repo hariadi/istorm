@@ -46,6 +46,15 @@
                 </li>
             @endauth
 
+             @permission('manage-orders')
+                <li class="{{ Active::pattern('admin/orders/*') }}">
+                    <a href="{{ route('admin.orders.index') }}">
+                        <i class="fa fa-users"></i>
+                        <span>{{ trans('menus.backend.orders.title') }}</span>
+                    </a>
+                </li>
+            @endauth
+
             <li class="header">{{ trans('menus.backend.sidebar.system') }}</li>
 
             <li class="{{ Active::pattern('admin/log-viewer*') }} treeview">

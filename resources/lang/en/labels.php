@@ -32,6 +32,35 @@ return [
     ],
 
     'backend' => [
+
+    	'orders' => [
+    		'active' => 'Active Orders',
+            'create' => 'Create Order',
+            'list' => 'Order Lists',
+            'deactivated' => 'Deactivated Orders',
+            'deleted' => 'Deleted Orders',
+            'edit' => 'Edit Order',
+            'management' => 'Order Management',
+            'no_permissions' => 'No Permissions',
+            'no_roles' => 'No Roles to set.',
+            'permissions' => 'Permissions',
+    		'table' => [
+				'user' => 'User',
+				'approver' => 'Approver',
+				'product' => 'Product',
+                'confirmed' => 'Confirmed',
+                'created' => 'Created',
+                'ended' => 'Ended',
+                'email' => 'E-mail',
+                'id' => 'ID',
+                'last_updated' => 'Last Updated',
+                'name' => 'Name',
+                'no_deactivated' => 'No Deactivated Users',
+                'no_deleted' => 'No Deleted Users',
+                'roles' => 'Roles',
+                'total' => 'user total|users total',
+            ],
+    	],
         'access' => [
             'roles' => [
                 'create' => 'Create Role',
@@ -62,6 +91,7 @@ return [
                 'permissions' => 'Permissions',
 
                 'table' => [
+                	'agency' => 'Agency',
                     'confirmed' => 'Confirmed',
                     'created' => 'Created',
                     'email' => 'E-mail',

@@ -2,6 +2,9 @@
 
 namespace App\Models\Access\User\Traits\Relationship;
 
+use App\Models\Order\Order;
+use App\Models\Agency\Agency;
+use App\Models\Product\Product;
 use App\Models\Access\User\SocialLogin;
 
 /**
@@ -10,6 +13,15 @@ use App\Models\Access\User\SocialLogin;
  */
 trait UserRelationship
 {
+	/**
+     * One-to-one relations with Agency.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\hasOne
+     */
+    public function agency()
+    {
+        return $this->belongsTo(Agency::class);
+    }
 
     /**
      * Many-to-Many relations with Role.
@@ -27,5 +39,21 @@ trait UserRelationship
     public function providers()
     {
         return $this->hasMany(SocialLogin::class);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function products()
+    {
+        return $this->hasMany(Product::class);
     }
 }

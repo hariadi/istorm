@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Backend\Access\User;
 
+use App\Models\Agency\Agency;
 use App\Models\Access\User\User;
 use App\Http\Controllers\Controller;
-use App\Repositories\Backend\Access\User\UserRepository;
 use App\Repositories\Backend\Access\Role\RoleRepository;
+use App\Repositories\Backend\Access\User\UserRepository;
 use App\Http\Requests\Backend\Access\User\StoreUserRequest;
 use App\Http\Requests\Backend\Access\User\ManageUserRequest;
 use App\Http\Requests\Backend\Access\User\UpdateUserRequest;
@@ -84,6 +85,7 @@ class UserController extends Controller
         return view('backend.access.edit')
             ->withUser($user)
             ->withUserRoles($user->roles->pluck('id')->all())
+            ->withAgencies(Agency::all());
             ->withRoles($this->roles->getAll());
     }
 

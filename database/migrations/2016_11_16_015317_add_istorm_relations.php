@@ -28,7 +28,11 @@ class AddIstormRelations extends Migration
 		Schema::table('products', function(Blueprint $table) {
 			$table->foreign('user_id')
 				->references('id')
-				->on('users')
+				->on('users');
+
+			$table->foreign('agency_id')
+				->references('id')
+				->on('agencies')
 				->onDelete('cascade');
 
 			$table->foreign('type_id')

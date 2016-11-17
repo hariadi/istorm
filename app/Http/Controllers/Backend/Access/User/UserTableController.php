@@ -34,6 +34,9 @@ class UserTableController extends Controller
 			->editColumn('confirmed', function($user) {
 				return $user->confirmed_label;
 			})
+			->addColumn('agency', function($user) {
+				return $user->agency ? $user->agency->name : trans('labels.general.none');
+			})
 			->addColumn('roles', function($user) {
 				return $user->roles->count() ?
 					implode("<br/>", $user->roles->pluck('name')->toArray()) :

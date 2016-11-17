@@ -31,6 +31,7 @@
                             <th>{{ trans('labels.backend.access.users.table.id') }}</th>
                             <th>{{ trans('labels.backend.access.users.table.name') }}</th>
                             <th>{{ trans('labels.backend.access.users.table.email') }}</th>
+                            <th>{{ trans('labels.backend.access.users.table.agency') }}</th>
                             <th>{{ trans('labels.backend.access.users.table.confirmed') }}</th>
                             <th>{{ trans('labels.backend.access.users.table.roles') }}</th>
                             <th>{{ trans('labels.backend.access.users.table.created') }}</th>
@@ -74,6 +75,7 @@
                     {data: 'id', name: '{{config('access.users_table')}}.id'},
                     {data: 'name', name: '{{config('access.users_table')}}.name', render: $.fn.dataTable.render.text()},
                     {data: 'email', name: '{{config('access.users_table')}}.email', render: $.fn.dataTable.render.text()},
+                    {data: 'agency', name: '{{config('access.users_table')}}.agency_id'},
                     {data: 'confirmed', name: '{{config('access.users_table')}}.confirmed'},
                     {data: 'roles', name: '{{config('access.roles_table')}}.name', sortable: false},
                     {data: 'created_at', name: '{{config('access.users_table')}}.created_at'},
