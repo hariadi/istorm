@@ -1,10 +1,10 @@
 <?php
 
-use App\Models\Order\Order;
+use App\Models\Photo\Photo;
 use App\Models\Product\Product;
 use Illuminate\Database\Seeder;
 
-class StormSeeder extends Seeder
+class ProductTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,11 +17,18 @@ class StormSeeder extends Seeder
 			DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 		}
 
-		factory(Order::class, 5)->create()->each(function($o) {
-			$o->products()->save(factory(Product::class)->create());
-		});
+		// factory(Order::class, 5)->create()->each(function($o) {
+		// 	$o->products()->save(factory(Product::class)->create());
+		// });
 
-		$this->call(ProductTableSeeder::class);
+		$products = Product::all();
+
+		foreach ($products as $product) {
+
+			$photo = factory(Photo::class)->create();
+
+			$product->photos()->save($photo);
+		}
 
 		if (DB::connection()->getDriverName() == 'mysql') {
 			DB::statement('SET FOREIGN_KEY_CHECKS=1;');

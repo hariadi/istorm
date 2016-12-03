@@ -27,5 +27,10 @@ Route::group(['middleware' => 'auth'], function () {
 		 * User Profile Specific
 		 */
 		Route::patch('profile/update', 'ProfileController@update')->name('profile.update');
+
+		/**
+		 * User Order Specific
+		 */
+		Route::resource('orders', 'OrderController');
 	});
 });

@@ -85,7 +85,7 @@ class UserController extends Controller
         return view('backend.access.edit')
             ->withUser($user)
             ->withUserRoles($user->roles->pluck('id')->all())
-            ->withAgencies(Agency::all());
+            ->withAgencies(Agency::all())
             ->withRoles($this->roles->getAll());
     }
 

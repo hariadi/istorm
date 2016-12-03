@@ -30,10 +30,10 @@
                         <tr>
                             <th>{{ trans('labels.backend.orders.table.id') }}</th>
                             <th>{{ trans('labels.backend.orders.table.user') }}</th>
-                            <th>{{ trans('labels.backend.orders.table.product') }}</th>
-                            <th>{{ trans('labels.backend.orders.table.approver') }}</th>
-                            <th>{{ trans('labels.backend.orders.table.created') }}</th>
+                            <th>{{ trans('labels.backend.orders.table.product_count') }}</th>
+                            <th>{{ trans('labels.backend.orders.table.started') }}</th>
                             <th>{{ trans('labels.backend.orders.table.ended') }}</th>
+                            <th>{{ trans('labels.backend.orders.table.created') }}</th>
                             <th>{{ trans('labels.general.actions') }}</th>
                         </tr>
                     </thead>
@@ -42,10 +42,10 @@
  							<tr>
  								<td>{{ $order->id }}</td>
  								<td>{{ $order->user->name }}</td>
- 								<td>{{ $order->product->name }}</td>
- 								<td>{{ $order->approver->name }}</td>
+ 								<td>{{ $order->products->count() }}</td>
  								<td>{{ $order->start_date }}</td>
  								<td>{{ $order->end_date }}</td>
+ 								<td>{{ $order->created_at }}</td>
  								<td>{!! $order->action_buttons !!}</td>
  							</tr>
 						@endforeach

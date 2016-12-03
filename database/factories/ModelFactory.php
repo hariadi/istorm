@@ -4,6 +4,7 @@ use Carbon\Carbon;
 use Faker\Generator;
 use App\Models\Type\Type;
 use App\Models\Order\Order;
+use App\Models\Photo\Photo;
 use App\Models\Agency\Agency;
 use App\Models\Product\Product;
 use App\Models\Access\User\User;
@@ -48,7 +49,7 @@ $factory->define(Agency::class, function (Generator $faker) {
 
 $factory->define(Type::class, function (Generator $faker) {
     return [
-    	'name' => $faker->sentence,
+    	'name' => $faker->randomElement(['Bilik', 'Kenderaan', 'Parkir']),
     ];
 });
 
@@ -77,13 +78,19 @@ $factory->define(Order::class, function (Generator $faker) {
     	'user_id' => function () {
             return factory(User::class)->create()->id;
         },
-        'product_id' => function () {
-            return factory(Product::class)->create()->id;
-        },
-        'approver_id' => function () {
-            return factory(User::class)->create()->id;
-        },
     	'start_date' => $start_date,
         'end_date' => $start_date->addWeeks(2),
+    ];
+});
+
+$factory->define(Photo::class, function (Generator $faker) {
+
+	$file = $faker->file($sourceDir =  public_path());
+
+    return [
+    	'path' => $file,
+    	'name' => basename($file),
+    	'photoable_type' => Product::class,
+    	'photoable_id' => 1
     ];
 });

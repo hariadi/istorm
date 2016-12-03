@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Order;
+namespace App\Http\Controllers\Frontend\User;
 
-use App\Models\Order\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,8 +14,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-    	$orders = Order::with('products', 'user', 'approver')->paginate();
-        return view('backend.orders.index', compact('orders'));
+        //
     }
 
     /**
@@ -26,7 +24,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        return view('frontend.user.order.create');
     }
 
     /**

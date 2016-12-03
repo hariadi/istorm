@@ -34,10 +34,12 @@ trait OrderRelationship
     /**
      * One-to-one relations with Product.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\hasOne
+     * @return \Illuminate\Database\Eloquent\Relations\hasMany
      */
-    public function product()
+    public function products()
     {
-        return $this->belongsTo(Product::class);
+        return $this->belongsToMany(Product::class)
+        	->withPivot('approved')
+        	->withTimestamps();
     }
 }

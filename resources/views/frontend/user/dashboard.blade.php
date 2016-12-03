@@ -34,17 +34,26 @@
                                         @permission('view-backend')
                                             {{ link_to_route('admin.dashboard', trans('navs.frontend.user.administration'), [], ['class' => 'btn btn-danger btn-xs']) }}
                                         @endauth
+
+
                                     </div><!--media-body-->
                                 </li><!--media-->
                             </ul><!--media-list-->
 
+                            {{ link_to_route('frontend.user.orders.create', 'Buat Tempahan', [], ['class' => 'btn btn-success btn-block']) }}
+                            <br>
+
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h4>Sidebar Item</h4>
+                                    <h4>Senarai Tempahan</h4>
                                 </div><!--panel-heading-->
 
                                 <div class="panel-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.
+                                    <ul>
+                                    	<li>Kenderaan</li>
+                                    	<li>Bilik Mesyuarat</li>
+                                    	<li>Parkir</li>
+                                    </ul>
                                 </div><!--panel-body-->
                             </div><!--panel-->
 
@@ -64,11 +73,11 @@
                                 <div class="col-xs-12">
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
-                                            <h4>Item</h4>
+                                            <h4>Makluman</h4>
                                         </div><!--panel-heading-->
 
                                         <div class="panel-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.</p>
+                                            <p>Tempahan berikut akan mencapai tarikh luput tempahan:</p>
                                         </div><!--panel-body-->
                                     </div><!--panel-->
                                 </div><!--col-xs-12-->

@@ -49,7 +49,7 @@
              @permission('manage-orders')
                 <li class="{{ Active::pattern('admin/orders/*') }}">
                     <a href="{{ route('admin.orders.index') }}">
-                        <i class="fa fa-users"></i>
+                        <i class="fa fa-shopping-cart"></i>
                         <span>{{ trans('menus.backend.orders.title') }}</span>
                     </a>
                 </li>
